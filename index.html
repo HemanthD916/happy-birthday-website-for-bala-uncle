@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Bala Uncle!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #87CEFA, #E0FFFF);
+            color: #003366;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            color: #004080;
+            font-size: 2.5rem;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f0f8ff;
+            border-radius: 12px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        button {
+            background-color: #1E90FF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 15px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0059b3;
+        }
+
+        #message {
+            display: none;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #004080;
+            background-color: #e6f7ff;
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .emoji {
+            position: fixed;
+            font-size: 24px;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Happy Birthday Bala Uncle! 🎂</h1>
+        <p><b>Wishing you an amazing day filled with joy, laughter, and good memories!</b></p>
+        
+        <!-- Your uploaded image -->
+        <img src="IMG-20251109-WA0011.jpg" alt="Birthday Photo">
+        
+        <p><b>Click below for a special birthday message 🎁</b></p>
+        <button onclick="showMessage()">Open Message</button>
+
+        <p id="message">
+            Bala Uncle, today’s all about celebrating you! Thank you so much for being such a kind, cheerful, funny, generous and inspiring person. 
+            May this year bring you endless happiness, success, and good health for you and your family. Have a fantastic birthday Bala Uncle, you truly deserve it! 🎂🎈🎊
+        </p>
+    </div>
+
+    <script>
+        function showMessage() {
+            const message = document.getElementById('message');
+            message.style.display = 'block';
+            message.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    </script>
+</body>
+</html>
