@@ -27,6 +27,8 @@
             background: #f0f8ff;
             border-radius: 12px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 10;
         }
 
         img {
@@ -65,12 +67,17 @@
             position: fixed;
             font-size: 24px;
             pointer-events: none;
-            animation: fall linear infinite;
+            animation: fall linear forwards;
+            z-index: 1;
         }
 
         @keyframes fall {
-            to {
-                transform: translateY(100vh);
+            0% {
+                transform: translateY(-10vh);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh);
                 opacity: 0;
             }
         }
@@ -80,8 +87,7 @@
     <div class="container">
         <h1> Happy Birthday Bala Uncle! 🎉🎂</h1>
         <p><b>Wishing you an amazing day filled with joy, laughter, and good memories!</b></p>
-        
-        <!-- Your uploaded image -->
+
         <img src="IMG-20251109-WA0011.jpg" alt="Birthday Photo">
         
         <p><b>Click below for a special birthday message 🎁</b></p>
@@ -89,7 +95,7 @@
 
         <p id="message">
             Bala Uncle, today’s all about celebrating you! Thank you so much for being such a kind, cheerful, funny, generous and inspiring person. 
-            May this year bring you and your family endless happiness, success, and good health. Have a fantastic birthday Bala Uncle, you truly deserve it! 🎂🎈🎊
+            May this year bring you and your family endless happiness, success, and good health. Have a fantastic birthday — you truly deserve it! 🎂🎈🎊
         </p>
     </div>
 
@@ -100,5 +106,8 @@
             message.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     </script>
+
+    <!-- 👇 Add this line to load your confetti script -->
+    <script src="confetti.js"></script>
 </body>
 </html>
