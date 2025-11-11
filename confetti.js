@@ -7,25 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
         emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
         document.body.appendChild(emoji);
 
-        
-        const size = Math.random() * 20 + 20; 
+        // random position and size
         emoji.style.left = Math.random() * 100 + "vw";
-        emoji.style.top = "-10px";
-        emoji.style.fontSize = size + "px";
-        emoji.style.animationDuration = Math.random() * 2 + 3 + "s"; 
+        emoji.style.fontSize = Math.random() * 20 + 20 + "px";
+        emoji.style.animationDuration = Math.random() * 3 + 3 + "s"; // 3–6s
 
-        
-        setTimeout(() => {
-            emoji.remove();
-        }, 5000);
+        // remove after animation ends
+        setTimeout(() => emoji.remove(), 6000);
     }
 
-    function generateMoreEmojis() {
-        for (let i = 0; i < 1000; i++) { 
-            createEmoji();
-        }
-    }
-
-   
-    setInterval(createEmoji, 20);
+    // create new emojis continuously
+    setInterval(createEmoji, 150);
 });
