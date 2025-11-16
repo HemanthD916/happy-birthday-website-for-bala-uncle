@@ -18,6 +18,7 @@
         h1 {
             color: #004080;
             font-size: 2.5rem;
+            margin-top: 20px;
         }
 
         .container {
@@ -63,12 +64,13 @@
             padding: 15px;
         }
 
+        /* CONFETTI FIX — z-index must be higher than container */
         .emoji {
             position: fixed;
             font-size: 24px;
             pointer-events: none;
             animation: fall linear forwards;
-            z-index: 1;
+            z-index: 9999; /* FIXED */
         }
 
         @keyframes fall {
@@ -84,8 +86,9 @@
     </style>
 </head>
 <body>
+    <h1>Happy Birthday Bala Uncle! 🎉🎂</h1>
+
     <div class="container">
-        <h1> Happy Birthday Bala Uncle! 🎉🎂</h1>
         <p><b>Wishing you an amazing day filled with joy, laughter, and good memories!</b></p>
 
         <img src="IMG-20251109-WA0011.jpg" alt="Birthday Photo">
@@ -94,8 +97,9 @@
         <button onclick="showMessage()">Open Message</button>
 
         <p id="message">
-            Bala Uncle, today’s all about celebrating you! Thank you so much for being such a kind, cheerful, funny, generous and inspiring person. 
-            May this year bring you and your family endless happiness, success, and good health. Have a fantastic birthday, you truly deserve it! 🎂🎈🎊
+            Bala Uncle, today’s all about celebrating you! Thank you so much for being such a kind, cheerful,
+            funny, generous, and inspiring person. May this year bring you and your family endless happiness,
+            success, and good health. Have a fantastic birthday, you truly deserve it! 🎂🎈🎊
         </p>
     </div>
 
@@ -107,7 +111,7 @@
         }
     </script>
 
-    <!-- 👇 Add this line to load your confetti script -->
-    <script src="confetti.js"></script>
+    <!-- Confetti script (MUST be at bottom!) -->
+    <script src="./confetti.js"></script>
 </body>
 </html>
