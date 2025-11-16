@@ -1,4 +1,3 @@
-// Ensure confetti starts AFTER page fully loads (fix for desktop browsers)
 window.addEventListener("load", function () {
     const emojis = ["🎊", "🎉", "🎊", "🎉"];
 
@@ -8,15 +7,14 @@ window.addEventListener("load", function () {
         emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
         document.body.appendChild(emoji);
 
-        // random position and size
-        emoji.style.left = Math.random() * 100 + "vw";
-        emoji.style.fontSize = Math.random() * 20 + 20 + "px";
-        emoji.style.animationDuration = Math.random() * 3 + 3 + "s"; // 3–6 seconds
+        // FIX: Use pixel units instead of vw for desktop browsers
+        emoji.style.left = Math.random() * window.innerWidth + "px";
 
-        // remove after animation ends
+        emoji.style.fontSize = Math.random() * 20 + 20 + "px";
+        emoji.style.animationDuration = Math.random() * 3 + 3 + "s";
+
         setTimeout(() => emoji.remove(), 6000);
     }
 
-    // Continuous confetti rain
     setInterval(createEmoji, 150);
 });
