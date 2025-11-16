@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
+// Ensure confetti starts AFTER page fully loads (fix for desktop browsers)
+window.addEventListener("load", function () {
     const emojis = ["🎊", "🎉", "🎊", "🎉"];
 
     function createEmoji() {
@@ -10,12 +11,12 @@ document.addEventListener("DOMContentLoaded", function () {
         // random position and size
         emoji.style.left = Math.random() * 100 + "vw";
         emoji.style.fontSize = Math.random() * 20 + 20 + "px";
-        emoji.style.animationDuration = Math.random() * 3 + 3 + "s"; // 3–6s
+        emoji.style.animationDuration = Math.random() * 3 + 3 + "s"; // 3–6 seconds
 
         // remove after animation ends
         setTimeout(() => emoji.remove(), 6000);
     }
 
-    // create new emojis continuously
+    // Continuous confetti rain
     setInterval(createEmoji, 150);
 });
